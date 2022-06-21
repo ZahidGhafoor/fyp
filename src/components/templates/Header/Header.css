@@ -1,0 +1,82 @@
+header {
+	position: relative;
+}
+
+.header-top {
+	display: flex;
+	padding: 6px 20px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.logo img {
+	width: 120px;
+}
+
+.navbar ul {
+	padding: 0;
+	margin: 0;
+}
+
+.header-select .MuiOutlinedInput-root {
+	background: #fafafa;
+	color: black;
+	padding: 2px 10px !important;
+	border-radius: 25px;
+	font-size: 14px;
+}
+
+.header-select .MuiSelect-select {
+	padding: 0 !important;
+}
+
+.header-select .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+	border: 0;
+}
+
+.header-select svg {
+	display: none;
+}
+
+.navbar {
+	padding: 0 25px;
+	/* text-align: center; */
+	background-color: gray;
+}
+
+.navbar ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar ul li {
+	list-style-type: none;
+	display: inline-block;
+	margin-left: 30px;
+}
+
+.navbar ul li:first-child {
+	margin-left: 0;
+}
+
+.navbar ul li a {
+	font-size: 14px;
+	padding: 20px 0;
+	color: #ffffff;
+	font-weight: 500;
+	display: inline-block;
+	text-decoration: none;
+	transition: all 0.4s ease;
+	border-bottom: 2px solid transparent;
+}
+
+.navbar ul li a.active {
+	color: #f5d312;
+	border-bottom: 2px solid #f5d312;
+}
+
+.navbar ul li a:hover {
+	color: #f5d312;
+}
