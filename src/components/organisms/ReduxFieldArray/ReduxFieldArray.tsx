@@ -1,13 +1,13 @@
 import Button from "components/atoms/Button";
-import useEffectOnce from "hooks/useEffectOnce";
 import ReduxFormFields from "components/molecules/ReduxFormFields";
 import FieldArrayHeading from "components/molecules/FieldArrayHeading";
+import { useEffect } from "react";
 export default function ReduxFieldArray({
 	fields,
 	label,
 	fieldsArray,
 }: any) {
-	useEffectOnce(() => fields.push({}));
+	useEffect(() => fields.push({}));
 	return (
 		<>
 			<h2>{label}s</h2>

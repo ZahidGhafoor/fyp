@@ -1,0 +1,39 @@
+.es__continer{
+
+  #app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper {
+      width: 330px !important;
+      height: 330px !important;
+      margin: 0;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .effect_image{
+      width: 330px !important;
+      height: 330px !important;
+  }
+  
+  @media screen and (max-width:700px){
+  .effect_image{
+      width: 200px !important;
+      height: 250px !important;
+  }
+  .swiper{
+      width: 200px !important;
+      height: 250px !important;
+  }
+  }
+}

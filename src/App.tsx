@@ -44,14 +44,12 @@ export default function App() {
           <ThemeProvider theme={theme}>
             <LocalizationProvider dateAdapter={dateAdapter}>
               <CssBaseline />
-              <ScopedCssBaseline style={{ backgroundColor: "#eeeeee" }}>
                 <Provider store={store}>
                   <BrowserRouter>
                     {/* <Header /> */}
                     <AppRoutes />
                   </BrowserRouter>
                 </Provider>
-              </ScopedCssBaseline>
             </LocalizationProvider>
           </ThemeProvider>
         </CacheProvider>
