@@ -17,7 +17,7 @@ const Navbar = () => {
       </div>
       <div className="searchBar">
         <img src={search} alt="" className="search__img" />
-        <input  type="text" className="search__input" />
+        <input placeholder='Search' type="text" className="search__input" />
 
       </div>
       <div className="user">

@@ -18,57 +18,62 @@ import img8 from "../../../assets/S1.jpg"
 
 
 
-const arr =[
+const arr = [
   {
-    img:img1
+    img: img1
   },
   {
-    img:img2
+    img: img2
   },
   {
-    img:img3
+    img: img3
   },
   {
-    img:img4
+    img: img4
   },
   {
-    img:img5
+    img: img5
   },
   {
-    img:img6
+    img: img6
   },
   {
-    img:img7
+    img: img7
   },
   {
-    img:img8
+    img: img8
   },
 ]
 
 const EffectSwipper = () => {
   return (
     <>
-    <div className="es__continer">
+      <div className="es__continer">
 
-    <Swiper
-      effect={"cards"}
-      grabCursor={true}
-      
-      modules={[EffectCards]}
-      className="mySwiper"
-    >
-      {
-        arr.map((data:any)=>{
-          return(
-            <SwiperSlide><img className="effect_image" src={data.img} alt="" /></SwiperSlide>
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          pagination={{
+            clickable: true,
+            el: `swiper-container swiper-container-testClass`,
+            bulletClass: `swiper-pagination-bullet swiper-pagination-testClass`
+          }}
+          wrapperTag='ul'
+          modules={[EffectCards]}
+          className="mySwiper"
+        >
+          {
+            arr.map((data: any) => {
+              return (
+                <SwiperSlide><img className="effect_image" src={data.img} alt="" /></SwiperSlide>
 
-          )
-        })
-      }
-      
-    </Swiper>
+              )
+            })
+          }
+
+        </Swiper>
       </div>
-  </>
+    </>
   )
 }
 
