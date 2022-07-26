@@ -6,11 +6,9 @@ import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
 import ErrorService from "services/error.service";
-import SentryService from "services/sentry.service";
 import ErrorBoundary from "components/atoms/ErrorBoundary";
 
 ErrorService.init();
-SentryService.init();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

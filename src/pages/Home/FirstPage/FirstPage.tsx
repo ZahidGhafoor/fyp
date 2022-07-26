@@ -7,44 +7,44 @@ import BasicCard from 'components/templates/BasicCard';
 
 const arr = [
     {
-        heading:"Nusa Penida",
-        location:"Bali, Indonesia"
+        heading: "Nusa Penida",
+        location: "Bali, Indonesia"
     },
     {
-        heading:"Broken Beach",
-        location:"Peru"
+        heading: "Broken Beach",
+        location: "Peru"
     },
     {
-        heading:"Machu Picchu",
-        location:"Bali, Indonesia"
+        heading: "Machu Picchu",
+        location: "Bali, Indonesia"
     },
     {
-        heading:"Bora Bora",
-        location:"Island, French Polynesia"
+        heading: "Bora Bora",
+        location: "Island, French Polynesia"
     },
     {
-        heading:"Angkor Wat",
-        location:"Siem Reap, Cambodia"
+        heading: "Angkor Wat",
+        location: "Siem Reap, Cambodia"
     },
     {
-        heading:"Niagara Falls",
-        location:"United States"
+        heading: "Niagara Falls",
+        location: "United States"
     },
     {
-        heading:"Eiffel Tower",
-        location:"Paris"
+        heading: "Eiffel Tower",
+        location: "Paris"
     },
     {
-        heading:"Giza Necropolis",
-        location:"Giza, Egypt"
+        heading: "Giza Necropolis",
+        location: "Giza, Egypt"
     },
     {
-        heading:"Colosseum",
-        location:"Rome, Italy"
+        heading: "Colosseum",
+        location: "Rome, Italy"
     },
     {
-        heading:"Petra",
-        location:"Petra, Jordan"
+        heading: "Petra",
+        location: "Petra, Jordan"
     },
 ]
 
@@ -57,7 +57,7 @@ const FirstPage = () => {
                     <div className="left">
                         <div className="left__upper">
 
-                            
+
 
                             <div className="slider">
                                 <EffectSwipper />
@@ -70,8 +70,8 @@ const FirstPage = () => {
                                 <div className="para1">End Time: <span>12-07-2022</span> | <span>10:00 AM</span></div>
                                 <div className="para2"><span>$99/</span>Per Person</div>
                                 <div className="qrCode">
-                                <QRCode value="https://www.fiverr.com/users/zahidghafoor40/seller_dashboard" renderAs="canvas" />
-                            </div>
+                                    <QRCode value="http://zahidghafoor.com/" renderAs="canvas" />
+                                </div>
                                 <div className="rating">
                                     <img src={star} alt="" className="rating__star" />
                                     <div className="text">4.9</div>
@@ -118,9 +118,9 @@ const FirstPage = () => {
                     </div>
 
                     <div className="pageCard">
-                        {arr.map((data)=>{
-                            return(
-                                <BasicCard heading={data.heading} location={data.location}/>
+                        {arr.map((data) => {
+                            return (
+                                <BasicCard heading={data.heading} location={data.location} />
                             )
                         })}
                     </div>
