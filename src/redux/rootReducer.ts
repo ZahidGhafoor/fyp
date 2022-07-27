@@ -5,6 +5,7 @@ import authReducer from "./slices/auth";
 import modalReducer from "./slices/modal";
 import loaderReducer from "./slices/loader";
 import HomeReducer from "./slices/Home/homeSlice";
+import webTripReducer from "./slices/webTrip/webTripSlice";
 // import productReducer from "./slices/product/productSlice";
 // import categoryReducer from "./slices/category/categorySlice";
 // import zipcodeReducer from "./slices/zipcode/zipcodeSlice";
@@ -25,6 +26,7 @@ const appReducer = combineReducers({
   modal: modalReducer,
   loader: loaderReducer,
   home: HomeReducer,
+  webTrip: webTripReducer,
   // city: cityReducer,
   // product: productReducer,
   // store: storeReducer,
@@ -44,4 +46,3 @@ const rootReducer = (state: any, action: any) => {
 };
 
 export default rootReducer;
-

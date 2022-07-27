@@ -4,7 +4,7 @@ export const environment = {
   // Test_Base_Url: "http://localhost:3001/",
 
   // test
-  API_END_URL: "https://enlight-demo.azurewebsites.net/api/GetAllWebTrips",
+  API_END_URL: "https://enlight-demo.azurewebsites.net/api/",
   Test_Base_Url: "http://mcback.bringfood.com/",
   PDF_LINK: "http://mcback.bringfood.com/invoices",
 

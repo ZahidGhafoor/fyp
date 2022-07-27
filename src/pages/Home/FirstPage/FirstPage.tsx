@@ -1,9 +1,11 @@
 import EffectSwipper from 'components/templates/EffectSwipper/EffectSwipper'
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./FirstPage.scss"
 import QRCode from 'qrcode.react';
 import star from "../../../assets/star.svg"
 import BasicCard from 'components/templates/BasicCard';
+import webTripService from 'services/webTrip.service';
+import { useAppDispatch, useAppSelector } from 'redux/hooks';
 
 const arr = [
     {
@@ -49,7 +51,22 @@ const arr = [
 ]
 
 
+
 const FirstPage = () => {
+
+
+    const dispatch = useAppDispatch()
+
+    const AllWebTrip = useAppSelector((state) => state.webTrip.GetAllWebTrips)
+
+
+    useEffect(() => {
+        webTripService.GetAllWebTrips(dispatch)
+    }, [dispatch])
+
+    console.log("All Web", AllWebTrip)
+
+
     return (
         <>
             <div className="first__container">
