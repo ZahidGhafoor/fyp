@@ -15,37 +15,18 @@ import img5 from "../../../assets/S5.jpg"
 import img6 from "../../../assets/S6.jpg"
 import img7 from "../../../assets/S7.jpg"
 import img8 from "../../../assets/S1.jpg"
+import { useAppSelector } from "redux/hooks";
 
 
 
-const arr = [
-  {
-    img: img1
-  },
-  {
-    img: img2
-  },
-  {
-    img: img3
-  },
-  {
-    img: img4
-  },
-  {
-    img: img5
-  },
-  {
-    img: img6
-  },
-  {
-    img: img7
-  },
-  {
-    img: img8
-  },
-]
 
 const EffectSwipper = () => {
+
+  const data = useAppSelector((state) => state.webTrip.GetPublicWebTrip);
+
+  if (!data) return <></>
+  const { Trip } = data
+
   return (
     <>
       <div className="es__continer">
@@ -63,9 +44,9 @@ const EffectSwipper = () => {
           className="mySwiper"
         >
           {
-            arr.map((data: any) => {
+            Trip.CarouselImages?.map((data: any) => {
               return (
-                <SwiperSlide><img className="effect_image" src={data.img} alt="" /></SwiperSlide>
+                <SwiperSlide><img className="effect_image" src={data} alt="" /></SwiperSlide>
 
               )
             })

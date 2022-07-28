@@ -14,7 +14,7 @@ import webTripReducer from "./slices/webTrip/webTripSlice";
 // import subCategoryReducer from "./slices/subcategory";
 // import bannerSlice from "./slices/banner/bannerSlice";
 // import campaignReducer from "./slices/campaign/campaignSlice";
-// import formLoaderReducer from "./slices/formLoader";
+import formLoaderReducer from "./slices/formLoader";
 // import cityReducer from "./slices/city/citySlice";
 // import roleReducer from "./slices/role/roleSlice";
 // import orderReducer from "./slices/order/orderSlice";
@@ -36,7 +36,7 @@ const appReducer = combineReducers({
   // banner: bannerSlice,
   // campaign: campaignReducer,
   // role: roleReducer,
-  // formLoader: formLoaderReducer,
+  formLoader: formLoaderReducer,
   // order: orderReducer
 });
 

@@ -1,44 +1,49 @@
 import http from "./http.service";
 import { AppDispatch } from "redux/store";
 import Promisable from "./promisable.service";
-// import { formLoaderActions } from "redux/slices/formLoader";
+import { formLoaderActions } from "redux/slices/formLoader";
 import { webTripActions } from "redux/slices/webTrip/webTripSlice";
+import { NavigateFunction } from "react-router-dom";
+import { homeActions } from "redux/slices/Home/homeSlice";
 
 const webTripService = {
-  // getCitybyID: async (id: any, dispatch?: AppDispatch) => {
-  //   dispatch?.(formLoaderActions.setLoading(true));
-
-  //   http.setJWT();
-
-  //   const [success, error]: any = await Promisable.asPromise(
-  //     http.get(`${url}/${id}`)
-  //   );
-
-  //   if (success) {
-  //     const { city } = success.data.data;
-  //     dispatch?.(cityActions.setCity(city));
-  //   }
-
-  //   dispatch?.(formLoaderActions.setLoading(false));
-
-  //   return [success, error];
-  // },
-
-  GetAllWebTrips: async (dispatch?: AppDispatch) => {
-    dispatch?.(webTripActions.setLoading(true));
+  GetAllWebTrips: async (data: any, dispatch?: AppDispatch) => {
+    dispatch?.(formLoaderActions.setLoading(true));
 
     http.setJWT();
 
     const [success, error]: any = await Promisable.asPromise(
-      http.post(`GetAllWebTrips`)
+      http.post(`GetAllPublicWebTrips`, data)
     );
 
     if (success) {
-      const { Trips } = success.data.data;
+      const { Trips } = success.data;
+
       dispatch?.(webTripActions.setGetAllWebTrips(Trips));
     }
 
-    dispatch?.(webTripActions.setLoading(false));
+    dispatch?.(formLoaderActions.setLoading(false));
+
+    return [success, error];
+  },
+  GetPublicWebTrip: async (data: any, dispatch?: AppDispatch) => {
+    let data2 = { tripGuid: data };
+    dispatch?.(formLoaderActions.setLoading(true));
+
+    http.setJWT();
+
+    const [success, error]: any = await Promisable.asPromise(
+      http.post(`GetPublicWebTrip`, data2)
+    );
+
+    if (success) {
+      const Trips = success.data;
+
+      dispatch?.(webTripActions.SetPublicWebTrip(Trips));
+      dispatch?.(homeActions.setTab(0));
+    }
+
+    dispatch?.(formLoaderActions.setLoading(false));
 
     return [success, error];
   },

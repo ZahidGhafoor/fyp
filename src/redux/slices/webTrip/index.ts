@@ -1,5 +1,6 @@
 export interface webTripState {
-  GetAllWebTrips: any[];
+  GetAllWebTrips: any;
+  GetPublicWebTrip: any;
   city: any;
   loading: boolean;
 }

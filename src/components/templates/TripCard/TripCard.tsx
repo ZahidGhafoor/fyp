@@ -12,9 +12,8 @@ import heart from "../../../assets/fav.svg";
 import DateService from "utils/date.util";
 import webTripService from "services/webTrip.service";
 import { useAppDispatch } from "redux/hooks";
-import { useNavigate } from "react-router-dom";
 
-const BasicCard = ({
+const TripCard = ({
   TripGuid,
   CarouselImages,
   EndLocation,
@@ -27,7 +26,6 @@ const BasicCard = ({
   LocationTag,
 }: any) => {
   const dispatch = useAppDispatch();
-
 
   const SingleDetail = () => {
     webTripService.GetPublicWebTrip(TripGuid, dispatch);
@@ -78,7 +76,7 @@ const BasicCard = ({
           End Location: <span>{EndLocation?.substr(0, 30)}</span>
         </div>
         <div className="para1">
-          Start Time: <span>{DateService.getFormattedDate(StartTime)}</span>
+          Start Time: <span>{DateService.getFormattedDate(StartTime)}</span>{" "}
         </div>
         <div className="para1">
           End Time: <span>{DateService.getFormattedDate(EndTime)}</span>
@@ -92,4 +90,4 @@ const BasicCard = ({
   );
 };
 
-export default BasicCard;
+export default TripCard;

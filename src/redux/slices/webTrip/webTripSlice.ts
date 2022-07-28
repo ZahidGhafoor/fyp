@@ -2,7 +2,8 @@ import { webTripState } from ".";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: webTripState = {
-  GetAllWebTrips: [],
+  GetAllWebTrips: null,
+  GetPublicWebTrip: {},
   loading: true,
   city: null,
 };
@@ -15,9 +16,10 @@ export const webTripSlice = createSlice({
       const GetAllWebTrips = action.payload;
       state.GetAllWebTrips = GetAllWebTrips;
     },
-    // setCity: (state, action) => {
-    //   state.city = action.payload;
-    // },
+    SetPublicWebTrip: (state, action) => {
+      const GetPublicWebTrip = action.payload;
+      state.GetPublicWebTrip = GetPublicWebTrip;
+    },
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
