@@ -40,7 +40,45 @@ const webTripService = {
       const Trips = success.data;
 
       dispatch?.(webTripActions.SetPublicWebTrip(Trips));
-      dispatch?.(homeActions.setTab(0));
+    }
+
+    dispatch?.(formLoaderActions.setLoading(false));
+
+    return [success, error];
+  },
+  GetAllPublicWebGroups: async (data: any, dispatch?: AppDispatch) => {
+    dispatch?.(formLoaderActions.setLoading(true));
+
+    http.setJWT();
+
+    const [success, error]: any = await Promisable.asPromise(
+      http.post(`GetAllPublicWebGroups`, data)
+    );
+
+    if (success) {
+      const { Groups } = success.data;
+
+      dispatch?.(webTripActions.setAllPulicWebGroups(Groups));
+    }
+
+    dispatch?.(formLoaderActions.setLoading(false));
+
+    return [success, error];
+  },
+  GetPublicWebGroup: async (data: any, dispatch?: AppDispatch) => {
+    let data2 = { GroupGuid: data, shareType: 32 };
+    dispatch?.(formLoaderActions.setLoading(true));
+
+    http.setJWT();
+
+    const [success, error]: any = await Promisable.asPromise(
+      http.post(`GetPublicWebGroup`, data2)
+    );
+
+    if (success) {
+      const Group = success.data;
+
+      dispatch?.(webTripActions.SetPublicWebGroup(Group));
     }
 
     dispatch?.(formLoaderActions.setLoading(false));

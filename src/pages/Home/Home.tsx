@@ -6,6 +6,7 @@ import { homeActions } from 'redux/slices/Home/homeSlice';
 import FirstPage from './FirstPage/FirstPage';
 import SecondPage from './SecondPage/SecondPage';
 import "./Home.scss"
+import ThirdPage from './ThirdPage/ThirdPage';
 
 
 
@@ -38,7 +39,7 @@ const Home = () => {
             },
             {
               label: "Groups & Catalogs",
-              element: <SecondPage />,
+              element: <ThirdPage />,
             },
           ]}
         />

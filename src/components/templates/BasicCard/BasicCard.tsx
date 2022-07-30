@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 
 const BasicCard = ({
   TripGuid,
+  GroupGuid,
   CarouselImages,
   EndLocation,
   EndTime,
@@ -30,7 +31,7 @@ const BasicCard = ({
 
 
   const SingleDetail = () => {
-    webTripService.GetPublicWebTrip(TripGuid, dispatch);
+    TripGuid ? webTripService.GetPublicWebTrip(TripGuid, dispatch) : webTripService.GetPublicWebGroup(GroupGuid, dispatch);
   };
   return (
     <div onClick={SingleDetail} className="cards__container">
@@ -38,6 +39,8 @@ const BasicCard = ({
         <Swiper
           grabCursor={true}
           effect={"creative"}
+          pagination={true}
+          navigation={true}
           creativeEffect={{
             prev: {
               shadow: true,
