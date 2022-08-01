@@ -8,12 +8,25 @@ import DateService from "utils/date.util";
 import "./SecondPage.scss";
 import star from "../../../assets/star.svg";
 import QRCode from "qrcode.react";
+import { useSearchParams } from "react-router-dom";
+import { Console } from "console";
 
 
 
 
 const SecondPage = () => {
+  // const [searchParams, setSearchParams] = useSearchParams();
+
+
+
+  // useEffect(() => {
+  //   setSearchParams({ ownerType: "2", ownerId: "56" })
+
+  // }, [])
+
+
   const dispatch = useAppDispatch();
+
 
   let data = {
     ownerType: 2,

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { HomeState } from ".";
 
 const initialState: HomeState = {
-  tab: 0,
+  tab: 1,
 };
 
 export const homeSlice = createSlice({

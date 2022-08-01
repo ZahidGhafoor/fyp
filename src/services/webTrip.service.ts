@@ -9,10 +9,19 @@ import { homeActions } from "redux/slices/Home/homeSlice";
 const webTripService = {
   GetAllWebTrips: async (data: any, dispatch?: AppDispatch) => {
     dispatch?.(formLoaderActions.setLoading(true));
+    console.log("data", data.ownerId);
+    let data2 = data.ownerId.toString();
+    console.log("data2", data2);
 
     http.setJWT();
 
+    // const query = `ownerId=${data.ownerId.toString()}&ownerType=${
+    //   data.ownerType
+    // }`;
+
     const [success, error]: any = await Promisable.asPromise(
+      // http.post(`GetAllPublicWebTrips`)
+      // http.post(`GetAllPublicWebTrips?${query}`)
       http.post(`GetAllPublicWebTrips`, data)
     );
 
