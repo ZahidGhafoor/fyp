@@ -24,7 +24,7 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   (res: any) => {
-    log("http response", res.config.url, res.data.data);
+    log("http response", res.config.url, res.data);
     ToasterService.showSuccess(res.data.message);
     return res;
   },

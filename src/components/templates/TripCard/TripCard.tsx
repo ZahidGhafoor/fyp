@@ -4,7 +4,7 @@ import "./Card.scss";
 
 import "swiper/css";
 import "swiper/css/effect-creative";
-import { EffectCreative } from "swiper";
+import { EffectCreative, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import star from "../../../assets/star.svg";
 
@@ -12,6 +12,9 @@ import heart from "../../../assets/fav.svg";
 import DateService from "utils/date.util";
 import webTripService from "services/webTrip.service";
 import { useAppDispatch } from "redux/hooks";
+import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css/pagination";
 
 const TripCard = ({
   TripGuid,
@@ -45,7 +48,9 @@ const TripCard = ({
               translate: ["100%", 0, 0],
             },
           }}
-          modules={[EffectCreative]}
+          modules={[EffectCreative, Pagination]}
+          pagination={true}
+
           className="mySwiper"
         >
           {CarouselImages?.map((data: any) => {
